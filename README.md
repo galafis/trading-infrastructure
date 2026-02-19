@@ -186,6 +186,31 @@ trading-infrastructure/
 └─────────────────────────────────────────────────────────┘
 ```
 
+```mermaid
+flowchart TD
+    A([Terraform\nInfraestrutura como Código]) --> B[AWS Infrastructure\nVPC · Multi-AZ · IAM · Security Groups]
+    B --> C1[RDS PostgreSQL\nBanco de Dados Gerenciado]
+    B --> C2[ElastiCache Redis\nCache em Memória]
+    B --> C3[S3 Buckets\nArmazenamento Criptografado]
+    B --> D[Amazon EKS\nKubernetes Cluster]
+    D --> E[Ingress Controller\nRoteamento de Tráfego]
+    E --> F{Trading Services\nHorizontal Pod Autoscaling}
+    F --> G1[Trading API\nPod 1]
+    F --> G2[Trading API\nPod 2]
+    F --> G3[Trading API\nPod N]
+    G1 --> C1
+    G2 --> C2
+    G1 --> H[Monitoring Stack]
+    G2 --> H
+    G3 --> H
+    H --> H1[Prometheus\nColeta de Métricas]
+    H --> H2[Grafana\nDashboards & Alertas]
+    H --> H3[CloudWatch\nLogs & Alertas AWS]
+    H1 --> I([Alertas & Observabilidade\nDetecção Proativa de Problemas])
+    H2 --> I
+    H3 --> I
+```
+
 ### 📊 Monitoring
 
 #### Prometheus Metrics
