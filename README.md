@@ -6,6 +6,7 @@
 [![Prometheus](https://img.shields.io/badge/Prometheus-Monitoring-red.svg)](https://prometheus.io/)
 [![Grafana](https://img.shields.io/badge/Grafana-Visualization-orange.svg)](https://grafana.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker)](Dockerfile)
 
 [English](#english) | [Português](#português)
 
